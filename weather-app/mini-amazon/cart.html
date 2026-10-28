@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Mini Amazon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<header class="navbar">
+    <a href="index.html" class="logo">
+        Mini<span>Amazon</span>
+    </a>
+
+    <a href="index.html" class="cart-link">
+        ← Continue Shopping
+    </a>
+</header>
+
+<main class="container">
+    <h1 class="section-title">Your Shopping Cart</h1>
+
+    <div id="cart-items"></div>
+
+    <section id="cart-summary" class="cart-summary" hidden>
+        <h2>Order Summary</h2>
+
+        <p>
+            Total Items:
+            <strong id="total-items">0</strong>
+        </p>
+
+        <p>
+            Total Price:
+            <strong id="total-price">₹0</strong>
+        </p>
+
+        <button id="clear-cart" type="button">
+            Clear Cart
+        </button>
+    </section>
+
+    <p id="empty-cart" hidden>
+        Your cart is empty. Start shopping!
+    </p>
+</main>
+
+<script src="cart.js"></script>
+
+
+</body>
+</html>

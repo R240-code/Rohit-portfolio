@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Records</title>
+</head>
+<body>
+
+    <h2>Student Registration Form</h2>
+
+    <form onsubmit="return validateForm()">
+
+        <label>Student Name:</label>
+        <input type="text" id="name" placeholder="Enter Name">
+        <br><br>
+
+        <label>Roll Number:</label>
+        <input type="text" id="roll" placeholder="Enter Roll Number">
+        <br><br>
+
+        <label>Email:</label>
+        <input type="text" id="email" placeholder="Enter Email">
+        <br><br>
+
+        <label>Age:</label>
+        <input type="number" id="age" placeholder="Enter Age">
+        <br><br>
+
+        <label>Mobile Number:</label>
+        <input type="text" id="mobile" placeholder="Enter Mobile Number">
+        <br><br>
+
+        <label>Course:</label>
+        <select id="course">
+            <option value="">Select Course</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Civil">Civil</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Clear</button>
+
+    </form>
+
+    <h3 id="result"></h3>
+
+    <script>
+
+        function validateForm() {
+
+            let name = document.getElementById("name").value.trim();
+            let roll = document.getElementById("roll").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let age = document.getElementById("age").value;
+            let mobile = document.getElementById("mobile").value.trim();
+            let course = document.getElementById("course").value;
+
+            let result = document.getElementById("result");
+
+            if (name === "") {
+                alert("Please enter student name");
+                return false;
+            }
+
+            if (!/^[a-zA-Z ]+$/.test(name)) {
+                alert("Name should contain only letters");
+                return false;
+            }
+
+            if (roll === "" || !/^[0-9]+$/.test(roll)) {
+                alert("Please enter a valid roll number");
+                return false;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert("Please enter a valid email");
+                return false;
+            }
+
+            if (age === "" || Number(age) < 1 || Number(age) > 100) {
+                alert("Please enter a valid age between 1 and 100");
+                return false;
+            }
+
+            if (!/^[0-9]{10}$/.test(mobile)) {
+                alert("Mobile number must contain exactly 10 digits");
+                return false;
+            }
+
+            if (course === "") {
+                alert("Please select a course");
+                return false;
+            }
+
+            result.innerHTML =
+                "Student Record Submitted Successfully!<br><br>" +
+                "Name: " + name + "<br>" +
+                "Roll Number: " + roll + "<br>" +
+                "Email: " + email + "<br>" +
+                "Age: " + age + "<br>" +
+                "Mobile: " + mobile + "<br>" +
+                "Course: " + course;
+
+            return false;
+        }
+
+    </script>
+
+</body>
+</html>

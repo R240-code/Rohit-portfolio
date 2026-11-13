@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeric Validation</title>
+</head>
+<body>
+    <h2>Numeric Input Validation</h2>
+
+    <label>Enter a number:</label>
+    <input type="text" id="numericInput" placeholder="Enter a number">
+    
+    <button onclick="validateNumber()">Check</button>
+
+    <h3 id="result"></h3>
+    <script>
+        function validateNumber(){
+            let value = document.getElementById("numericInput").value;
+            if(value.trim() === ""){
+                document.getElementById("result").innerHTML = "Please enter a value!.";        }
+            else if(isNaN(value)){
+                document.getElementById("result").innerHTML = "Please enter a valid number.";
+            }
+            else{
+                document.getElementById("result").innerHTML = "Valid number entered: " + value;
+        }
+    }
+    </script>  
+</body>
+</html>
